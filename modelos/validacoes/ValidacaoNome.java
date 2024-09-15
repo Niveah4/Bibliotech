@@ -8,7 +8,7 @@ public class ValidacaoNome {
             if (!nome.matches ("[a-zA-Z\\s]+")) {
               throw new InvalidNomeFormatException ("Entrada inválida. Por favor, digite apenas letras e espaços.");
             } 
-             if (!(nome == null || nome==" ")) {
+             if (nome == null || nome.trim().isEmpty()) {
             throw new InvalidNomeFormatException ("O nome não pode ser nulo ou vazio.");
         }
     }

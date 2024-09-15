@@ -1,4 +1,4 @@
-package modelos;
+package modelos.Service;
 
 import modelos.exceptions.InvalidNomeFormatException;
 import modelos.validacoes.ValidacaoNome;
