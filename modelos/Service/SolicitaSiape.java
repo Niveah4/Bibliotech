@@ -10,10 +10,13 @@ public class SolicitaSiape {
        public static Scanner scann = new Scanner(System.in);
 
     public static String solicitarSiape() {
-        System.out.println("Digite seu SIAPE:");
-        String siape = scann.nextLine();
+        String siape;
 
         while(true){
+
+            System.out.println("Digite seu SIAPE:");
+            siape = scann.nextLine();
+
             try{
                 ValidacaoSiape.validarMatricula(siape);
                 System.out.println("SIAPE válido!");

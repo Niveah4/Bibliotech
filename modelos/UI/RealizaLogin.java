@@ -1,6 +1,7 @@
 package modelos.UI;
 import modelos.Entidades.Admnistrador;
 import modelos.Entidades.Leitor;
+import modelos.GestaoLivros.Services.GerenciamentoAdministrador;
 import modelos.GestaoLivros.Services.GerenciamentoLeitor;
 
 import java.util.HashMap;
@@ -48,14 +49,15 @@ public class RealizaLogin {
                     System.out.println("\nLogin bem-sucedido como Leitor!");
 
                     loope = true;
-                     // System.out.println("\n.........Iniciando Sistema.........");
+                      System.out.println("\n.........Iniciando Sistema.........");
                     GerenciamentoLeitor.menuLivro(leitor.getNome());
 
                 } else {
                     System.out.println("\nMatrícula ou senha inválidos para Leitor.");
                 }
 
-            } else if (tipoUsuario == 2) {
+            }
+             else if (tipoUsuario == 2) {
                 if (RealizaCadastro.administradores.isEmpty()) {
                     System.out.println("Nenhum Administrador cadastrado. Realize o cadastro primeiro.");
                     return;  // Volta ao menu principal
@@ -71,8 +73,13 @@ public class RealizaLogin {
                 if (administrador != null && administrador.login(siape, senha)) {
                     System.out.println("\nLogin bem-sucedido como Administrador!");
 
-        
-        
+                    loope = true;
+                    System.out.println("\n.........Iniciando Sistema.........");
+                    GerenciamentoAdministrador.menu(administrador.getNome());
+
+
+
+
                 } else {
                     System.out.println("Identificador ou senha inválidos para Administrador.");
                 }

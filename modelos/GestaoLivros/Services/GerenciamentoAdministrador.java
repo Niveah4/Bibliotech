@@ -6,33 +6,35 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
-// import java.util.ArrayList;
-// import java.util.List;
 
-// import modelos.GestaoLivros.Entidade.Livro;
-
-public class GerenciamentoLeitor {
+public class GerenciamentoAdministrador {
 
     public static Map<String, Leitor> leitores = new HashMap<>();
     public static Map<String, Admnistrador> administradores = new HashMap<>();
     
-    public static void menuLivro(String nome) {
+    public static void menu(String nome) {
         Scanner scann = new Scanner(System.in);
 
-         System.out.println("\n.........Quase lá.........");
+         System.out.println("\n........PORTAL DO ADM.........");
           nome = nome.toUpperCase();
           System.out.println("\nOlá, " + nome + "!\n");
 
         while (true) {
 
-            System.out.println("         --------MENU DO LEITOR: --------");
-            System.out.println("1 - Buscar por livros disponíveis");
-            System.out.println("2 - Realizar empréstimos");
-            System.out.println("3 - Devolver exemplares");
-            System.out.println("4 - Histórico de empréstimos");
-            System.out.println("5 - Sair");
+            System.out.println("         --------MENU DO ADMNISTRADOR: --------");
+          System.out.println ("\n1-CADASTRAR USUARIO" +
+            "\n2-CADASTRAR LIVRO" +
+            "\n3-PEGAR LIVRO EMPRESTADO" +
+            "\n4-DEVOLVER UM LIVRO" +
+            "\n5-MOSTRAR USUÁRIOS CADASTRADOS" +
+            "\n6-MOSTRAR USUARIOS E SEUS LIVROS" +
+            "\n7-MOSTRAR TODOS OS LIVROS" +
+            "\n8-EDITAR INF. DOS LIVROS" +
+            "\n9-EDITAR INF. USUÁRIO"+
+            "\n10-PARAR A APLICAÇÃO");
 
-            System.out.println("Digite uma opção entre 1 e 5:");
+
+            System.out.println("Digite uma opção entre 1 e 10:");
             int opc = scann.nextInt();
 
             switch (opc) {
@@ -48,7 +50,7 @@ public class GerenciamentoLeitor {
                     break;
 
                 case 5:
-                    System.out.println("Saindo do sistema de Leitor... Até logo!");
+                    System.out.println("Saindo do sistema de Admnistrador... Até logo!");
                     return;
                 default:
                     System.out.println("Opção inválida, tente novamente.");
@@ -57,3 +59,4 @@ public class GerenciamentoLeitor {
         }
     }
 }
+
